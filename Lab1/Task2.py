@@ -35,6 +35,10 @@ while True:
             if ch == " ":
                 continue
             ch = ch.upper()
+            if ch == "Ș":
+                ch = "Ş"   
+            if ch == "Ț":
+                ch = "Ţ"             
             if ch not in alphabet:
                 print("Invalid character:", ch)
                 error = True
@@ -67,6 +71,10 @@ while True:
             if ch == " ":
                 continue
             ch = ch.upper()
+            if ch == "Ș":
+                ch = "Ş"   
+            if ch == "Ț":
+                ch = "Ţ"
             if ch not in alphabet:
                 print("Invalid character:", ch)
                 error = True
