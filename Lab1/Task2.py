@@ -1,7 +1,6 @@
 # Lab 1, Task 1.2: Caesar cipher with keyword (Romanian alphabet)
 
 alphabet = "AĂÂBCDEFGHIÎJKLMNOPQRSŞTŢUVWXYZ"
-lower = "aăâbcdefghiîjklmnopqrsştţuvwxyz"
 n = 31
 
 while True:
@@ -35,14 +34,12 @@ while True:
         for ch in word:
             if ch == " ":
                 continue
-            if ch in lower:
-                position = lower.index(ch)
-                ch = alphabet[position]
+            ch = ch.upper()
             if ch not in alphabet:
                 print("Invalid character:", ch)
                 error = True
                 break
-            keyword = keyword + ch
+            keyword += ch
 
         if error == True:
             continue
@@ -54,10 +51,10 @@ while True:
     new_alphabet = ""
     for ch in keyword:
         if ch not in new_alphabet:
-            new_alphabet = new_alphabet + ch
+            new_alphabet += ch
     for ch in alphabet:
         if ch not in new_alphabet:
-            new_alphabet = new_alphabet + ch
+            new_alphabet += ch
 
     print("Permuted alphabet:", new_alphabet)
 
@@ -69,14 +66,12 @@ while True:
         for ch in text:
             if ch == " ":
                 continue
-            if ch in lower:
-                position = lower.index(ch)
-                ch = alphabet[position]
+            ch = ch.upper()
             if ch not in alphabet:
                 print("Invalid character:", ch)
                 error = True
                 break
-            text2 = text2 + ch
+            text2 += ch
 
         if error == False:
             break
@@ -88,6 +83,6 @@ while True:
             new_position = (position + k) % n
         else:
             new_position = (position - k) % n
-        result = result + new_alphabet[new_position]
+        result += new_alphabet[new_position]
 
     print("Result:", result)

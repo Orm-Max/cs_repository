@@ -1,7 +1,6 @@
 # Lab 1, Task 1.1: Caesar cipher with one key (Romanian alphabet)
 
 alphabet = "AĂÂBCDEFGHIÎJKLMNOPQRSŞTŢUVWXYZ"
-lower = "aăâbcdefghiîjklmnopqrsştţuvwxyz"
 n = 31
 
 while True:
@@ -36,14 +35,12 @@ while True:
             if ch == " ":
                 continue
 
-            if ch in lower:
-                position = lower.index(ch)
-                ch = alphabet[position]
+            ch = ch.upper()
             if ch not in alphabet:
                 print("Invalid character:", ch)
                 error = True
                 break
-            text2 = text2 + ch
+            text2 += ch
 
         if error == False:
             break
@@ -55,6 +52,6 @@ while True:
             new_position = (position + k) % n
         else:
             new_position = (position - k) % n
-        result = result + alphabet[new_position]
+        result += alphabet[new_position]
 
     print("Result:", result)
